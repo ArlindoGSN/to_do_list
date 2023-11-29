@@ -5,4 +5,6 @@ routes.get("/", taskController.getAllTasks);
 
 routes.post("/create", taskController.createTask)
 
+routes.get("/getById", taskController.getById)
+
 module.exports = routes;

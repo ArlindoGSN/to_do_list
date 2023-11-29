@@ -3,7 +3,7 @@ const Task = require("../models/Task");
 const getAllTasks = async (req, res) => {
   try {
     const tasksList = await Task.find();
-    return res.render("index", {tasksList: tasksList});
+    return res.render("index", { tasksList: tasksList });
   } catch (err) {
     res.status(500).send({ erro: err.mesage });
   }
@@ -24,7 +24,14 @@ const createTask = async (req, res) => {
   }
 };
 
+const getById = async (req, res) => {
+  const task = await req.findOne({ _id: req.params.id });
+
+  res.render("index", { task, tasksList });
+};
+
 module.exports = {
   getAllTasks,
   createTask,
+  getById,
 };

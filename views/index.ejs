@@ -19,11 +19,19 @@
       <button class="addbutton" type="submit">Adcionar</button>
     </form>
 
-    <% tasksList.forEach((task)=>{  %>
-    <ul>
-      <li><%= task.task %> | <%= task.date.toLocaleDateString('pt-br') %></li>
-    </ul>
-    <% }) %>
+    <section>
+      <ul>
+        <% tasksList.forEach((task)=>{ %>
+
+        <li><%= task.task %> | <%= task.date.toLocaleDateString('pt-br') %>
+          <a href="">Editar</a>
+          <a href="">Apagar</a>
+        </li>
+        
+
+        <% }) %>
+      </ul>
+    </section>
 
     <script src="script.js"></script>
   </body>
