@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 
 const taskSchema = new mongoose.Schema({
-  tasks: {
+  task: {
     type: String,
     required: true,
   },
   check: {
     type: Boolean, 
-    required: true,
+    default: false,
   },
   date: {
     type: Date,
